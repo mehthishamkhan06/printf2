@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mohkhan <mohkhan@student.42abudhabi.ae>    +#+  +:+       +#+         #
+#    By: mohkhan <mohkhan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/07/10 14:08:30 by mohkhan           #+#    #+#              #
-#    Updated: 2024/07/10 14:08:34 by mohkhan          ###   ########.fr        #
+#    Created: 2024/07/11 15:00:14 by mohkhan           #+#    #+#              #
+#    Updated: 2024/07/11 15:13:30 by mohkhan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ OBJS			= $(SRCS:.c=.o)
 
 CC				= cc
 RM				= rm -f
-CFLAGS			= -Wall -Wextra -Werror -I.
+CFLAGS			= -Wall -Wextra -Werror .
 
 NAME			= libftprintf.a
 

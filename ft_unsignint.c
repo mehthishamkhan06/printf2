@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_unsignint.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mohkhan <mohkhan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mohkhan <mohkhan@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/10 14:10:32 by mohkhan           #+#    #+#             */
-/*   Updated: 2024/07/10 15:51:26 by mohkhan          ###   ########.fr       */
+/*   Created: 2024/07/11 15:03:04 by mohkhan           #+#    #+#             */
+/*   Updated: 2024/07/11 15:03:07 by mohkhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ int	ft_unsignint(unsigned int n)
 	length = 0;
 	if (n >= 10)
 	{
-		length += ft_unsignint(n / 10);
-		count = ft_unsignint(n / 10);
-		if (count == -1)
+		length = ft_unsignint((n / 10));
+		if (length == -1)
 			return (-1);
+		count += length;
 	}
-	length += ft_putchar((n % 10) + 48);
-	count = ft_putchar((n % 10 + 48));
-	if (count == -1)
+	length = ft_putchar((n % 10) + 48);
+	if (length == -1)
 		return (-1);
-	return (length);
+	count += length;
+	return (count);
 }

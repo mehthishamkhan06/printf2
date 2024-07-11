@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mohkhan <mohkhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/10 14:09:26 by mohkhan           #+#    #+#             */
-/*   Updated: 2024/07/10 17:54:35 by mohkhan          ###   ########.fr       */
+/*   Created: 2024/07/11 15:01:13 by mohkhan           #+#    #+#             */
+/*   Updated: 2024/07/11 15:11:34 by mohkhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,3 @@ int	ft_printf(const char *str, ...)
 	va_end(lst);
 	return (len);
 }
-
-// int	main(void)
-// {
-// 	ft_printf("%d %s", 66, "hello\n");
-// 	printf("\n%d %s", 66 ,"66" );
-// }

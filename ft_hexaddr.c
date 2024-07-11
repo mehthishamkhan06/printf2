@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_hexaddr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mohkhan <mohkhan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mohkhan <mohkhan@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/10 14:08:46 by mohkhan           #+#    #+#             */
-/*   Updated: 2024/07/10 17:59:06 by mohkhan          ###   ########.fr       */
+/*   Created: 2024/07/11 15:00:34 by mohkhan           #+#    #+#             */
+/*   Updated: 2024/07/11 15:00:37 by mohkhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,16 @@ int	ft_hexadec(unsigned long n)
 	length = 0;
 	if (n > 15)
 	{
-		length += ft_hexadec(n / 16);
-		count = ft_hexadec(n / 16);
-		if (count == -1)
+		length = ft_hexadec(n / 16);
+		if (length == -1)
 			return (-1);
+		count += length;
 	}
-	length += ft_putchar(str[n % 16]);
-	count = ft_putchar(str[n % 16]);
-	if (count == -1)
+	length = write(1, &str[n % 16], 1);
+	if (length == -1)
 		return (-1);
-	return (length);
+	count += length;
+	return (count);
 }
 
 int	ft_hexaddr(unsigned long n)
@@ -42,14 +42,21 @@ int	ft_hexaddr(unsigned long n)
 
 	count = 0;
 	length = ft_putstr("0x");
+	if (length == -1)
+		return (-1);
 	if (n == 0)
-		return (ft_putchar('0'));
+	{
+		count = write(1, "0", 1);
+		if (count == -1)
+			return (-1);
+		length += count;
+	}
 	else
 	{
-		length += ft_hexadec(n);
 		count = ft_hexadec(n);
 		if (count == -1)
 			return (-1);
+		length += count;
 	}
 	return (length);
 }

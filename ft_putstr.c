@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mohkhan <mohkhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/10 14:10:03 by mohkhan           #+#    #+#             */
-/*   Updated: 2024/07/10 15:21:52 by mohkhan          ###   ########.fr       */
+/*   Created: 2024/07/11 15:02:25 by mohkhan           #+#    #+#             */
+/*   Updated: 2024/07/11 15:13:08 by mohkhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,3 @@ int	ft_putstr(char *str)
 		i++;
 	return (write(1, str, i));
 }
-
-// int main()
-// {
-// 	ft_putstr("HELLO\n");
-// 	printf("%d\n", ft_putstr(""));
-// }

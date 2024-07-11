@@ -5,12 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mohkhan <mohkhan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/10 14:10:18 by mohkhan           #+#    #+#             */
-/*   Updated: 2024/07/10 15:51:16 by mohkhan          ###   ########.fr       */
+/*   Created: 2024/07/11 15:02:37 by mohkhan           #+#    #+#             */
+/*   Updated: 2024/07/11 15:13:19 by mohkhan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+int	check(int length, int *count)
+{
+	length = write(1, "-", 1);
+	if (length == -1)
+		return (-1);
+	*count += length;
+	return (0);
+}
 
 int	ft_rnputnbr(int n)
 {
@@ -23,19 +32,20 @@ int	ft_rnputnbr(int n)
 		return (ft_putstr("-2147483648"));
 	if (n < 0)
 	{
-		length = ft_putchar('-');
+		if (check(length, &count) == -1)
+			return (-1);
 		n = -n;
 	}
 	if (n > 9)
 	{
-		length += ft_rnputnbr(n / 10);
-		count = ft_rnputnbr(n / 10);
-		if (count == -1)
+		length = ft_rnputnbr((n / 10));
+		if (length == -1)
 			return (-1);
+		count += length;
 	}
-	length += ft_putchar((n % 10) + '0');
-	count = ft_putchar((n % 10) + '0');
-	if (count == -1)
+	length = ft_putchar((n % 10) + '0');
+	if (length == -1)
 		return (-1);
-	return (length);
+	count++;
+	return (count);
 }
